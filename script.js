@@ -107,7 +107,7 @@ const VoiceRSS = {
 
 function test() {
   VoiceRSS.speech({
-    key: '',
+    key: 'bd675c5cd667446f89bd3619dea58367',
     src: 'Hello World',
     hl: 'en-us',
     r: 0,
