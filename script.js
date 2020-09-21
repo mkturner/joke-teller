@@ -124,12 +124,18 @@ getJokes();
 
 // Get Jokes from API
 async function getJokes() {
+  let joke = '';
   const jokesApiUrl =
     'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist';
   try {
     const response = await fetch(jokesApiUrl);
     const data = await response.json();
-    console.log(data);
+    if (data.setup) {
+      joke = `${data.setup} ... ${data.delivery}`;
+    } else {
+      joke = data.joke;
+    }
+    console.log(joke);
   } catch (error) {
     // Process error here
     console.log('Whoops: ', error);
