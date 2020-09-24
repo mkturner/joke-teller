@@ -106,9 +106,6 @@ const VoiceRSS = {
   },
 };
 
-// On load
-getJokes();
-
 // Pass joke to Voice RSS API
 function tellMe(joke) {
   console.log('tell me:', joke);
@@ -142,3 +139,6 @@ async function getJokes() {
     console.log('Whoops: ', error);
   }
 }
+
+// On load
+getJokes();
